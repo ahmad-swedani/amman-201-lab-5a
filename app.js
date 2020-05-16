@@ -135,11 +135,41 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
 
+ // /*first way*/
+    
+    // var con1 = 1;
+    // var scon1 = 1;
+    // con1 = multiply(testArray[0],testArray[1]);
+    // scon1 = multiply(testArray[2],con1[0]);
+    
+    // var msg5 =`The numbers ${testArray.join()} have a product of ${scon1[0]}.`
+    
+    // console.log(scon1[0],msg5)
+    
+    // return[scon1[0],msg5];
+    
+    // /*second way*/
+
+    var mulFive = 1;
+    var msgFive = 0;
+    var totalMsg = 0;
+    for (var i = 0; i < testArray.length; i++) {
+        mulFive = multiply(mulFive,testArray[i])[0];  
+        if(i == testArray.length-1){
+            msgFive = msgFive + testArray[i]; 
+        } else {
+            msgFive = msgFive + testArray[i] + ','; 
+            
+        }
+    }
+    totalMsg = `The numbers ${msgFive} have a product of ${mulFive}.`;
+    // console.log(mulFive,totalMsg)
+    return[mulFive,totalMsg];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
 // testArray
-// testMultiplyArray();
+testMultiplyArray();
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
